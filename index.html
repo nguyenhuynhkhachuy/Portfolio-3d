@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Khac Huy Portfolio</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <!-- BACKGROUND VIDEO -->
+    <video
+        id="bg-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+    >
+        <source src="bg.mp4" type="video/mp4">
+    </video>
+
+    <div class="bg-overlay"></div>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <main class="hero">
+
+        <div class="hero-left">
+
+            <div class="avatar-wrapper">
+
+                <img
+                    src="avatar.png"
+                    alt="Avatar"
+                    decoding="async"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-right">
+
+            <span class="tag">
+                3D Artist
+            </span>
+
+
+            <h3 class="hello">
+                Hello, It's Me
+            </h3>
+
+
+            <h1>
+                Khac Huy
+            </h1>
+
+
+            <h2>
+                I am a 3D Artist.
+            </h2>
+
+
+            <p>
+                I am looking forward to developing my career in a
+                creative and dynamic company where I can apply my
+                knowledge and skills to create unique and impressive
+                design products.
+            </p>
+
+
+            <!-- CONTACT -->
+
+            <div class="contact-info">
+
+                <!-- EMAIL -->
+
+                <div class="contact-item">
+
+                    <a
+                        href="mailto:Khachuy193@gmail.com"
+                        class="contact-main"
+                        aria-label="Send email to Khac Huy"
+                    >
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <span class="copy-text">
+                            Khachuy193@gmail.com
+                        </span>
+
+                    </a>
+
+
+                    <button
+                        class="copy-btn"
+                        type="button"
+                        data-copy="Khachuy193@gmail.com"
+                        aria-label="Copy email"
+                        title="Copy email"
+                    >
+
+                        <i class="fa-regular fa-copy"></i>
+
+                    </button>
+
+                </div>
+
+
+                <!-- PHONE -->
+
+                <div class="contact-item">
+
+                    <a
+                        href="tel:+84767711717"
+                        class="contact-main"
+                        aria-label="Call Khac Huy"
+                    >
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <span class="copy-text">
+                            0767711717
+                        </span>
+
+                    </a>
+
+
+                    <button
+                        class="copy-btn"
+                        type="button"
+                        data-copy="0767711717"
+                        aria-label="Copy phone number"
+                        title="Copy phone number"
+                    >
+
+                        <i class="fa-regular fa-copy"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- SOCIAL -->
+
+            <div class="socials">
+
+                <a
+                    href="https://www.facebook.com/nguyenhuynhkhachi/"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+
+                <a
+                    href="https://www.instagram.com/nguyenhuynhkhachi/"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+
+                <a
+                    href="https://www.linkedin.com/in/kh%E1%BA%AFc-huy-1a6750341/"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+
+                <a
+                    href="https://www.artstation.com/khachi"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    <i class="fab fa-artstation"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         RESUME
+    ====================================================== -->
+
+    <section
+        class="window"
+        id="resumeWindow"
+    >
+
+        <div class="window-header">
+
+            <h3>
+                Resume
+            </h3>
+
+
+            <button
+                class="close-btn"
+                onclick="closeWindow('resumeWindow')"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <div class="window-body">
+
+            <div class="resume-tabs">
+
+                <button
+                    class="tab-btn active"
+                    data-tab="tab-education"
+                >
+                    EDUCATION
+                </button>
+
+
+                <button
+                    class="tab-btn"
+                    data-tab="tab-service"
+                >
+                    THE SERVICE
+                </button>
+
+
+                <button
+                    class="tab-btn"
+                    data-tab="tab-skills"
+                >
+                    SKILLS
+                </button>
+
+            </div>
+
+
+            <div class="resume-tab-contents">
+
+                <div
+                    id="tab-education"
+                    class="tab-content active"
+                >
+
+                    <img
+                        src="ed.png"
+                        alt="Education"
+                        loading="lazy"
+                        decoding="async"
+                    >
+
+                </div>
+
+
+                <div
+                    id="tab-service"
+                    class="tab-content"
+                >
+
+                    <img
+                        src="ts.png"
+                        alt="The Service"
+                        loading="lazy"
+                        decoding="async"
+                    >
+
+                </div>
+
+
+                <div
+                    id="tab-skills"
+                    class="tab-content"
+                >
+
+                    <img
+                        src="s.png"
+                        alt="Skills"
+                        loading="lazy"
+                        decoding="async"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="cv-wrapper">
+
+                <a
+                    class="cv-btn"
+                    href="cv.pdf"
+                    target="_blank"
+                    rel="noopener"
+                >
+
+                    <i class="fa-solid fa-file-arrow-down"></i>
+
+                    Download CV
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PORTFOLIO
+    ====================================================== -->
+
+    <section
+        class="window large-window"
+        id="portfolioWindow"
+    >
+
+        <div class="window-header">
+
+            <h3>
+                3D Portfolio
+            </h3>
+
+
+            <button
+                class="close-btn"
+                onclick="closeWindow('portfolioWindow')"
+            >
+                ✕
+            </button>
+
+        </div>
+
+
+        <div class="window-body portfolio-body">
+
+            <div class="portfolio-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        SELECTED WORK
+                    </span>
+
+
+                    <h2 class="portfolio-title">
+                        3D Projects
+                    </h2>
+
+                </div>
+
+
+                <span class="project-count">
+                    07 PROJECTS
+                </span>
+
+            </div>
+
+
+            <div class="grid-3d">
+
+
+                <!-- PROJECT 01 -->
+
+                <div
+                    class="project-card"
+                    onclick="openProject('project3d_1')"
+                >
+
+                    <div class="project-image-wrap">
+
+                        <img
+                            src="1.png"
+                            alt="God Slayer"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+
+                        <span class="project-number">
+                            01
+                        </span>
+
+                    </div>
+
+
+                    <div class="card-text">
+
+                        <strong>
+                            God Slayer
+                        </strong>
+
+
+                        <small>
+                            Character
+                            <span>•</span>
+                            3D Art
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROJECT 02 -->
+
+                <div
+                    class="project-card"
+                    onclick="openProject('project3d_2')"
+                >
+
+                    <div class="project-image-wrap">
+
+                        <img
+                            src="2.png"
+                            alt="Kane Oni"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+
+                        <span class="project-number">
+                            02
+                        </span>
+
+                    </div>
+
+
+                    <div class="card-text">
+
+                        <strong>
+                            Kane Oni
+                        </strong>
+
+
+                        <small>
+                            Character
+                            <span>•</span>
+                            3D Art
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROJECT 03 -->
+
+                <div
+                    class="project-card"
+                    onclick="openProject('project3d_3')"
+                >
+
+                    <div class="project-image-wrap">
+
+                        <img
+                            src="3.png"
+                            alt="Cyberpunk Plasma Rifle"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+
+                        <span class="project-number">
+                            03
+                        </span>
+
+                    </div>
+
+
+                    <div class="card-text">
+
+                        <strong>
+                            Cyberpunk Plasma Rifle
+                        </strong>
+
+
+                        <small>
+                            Hard Surface
+                            <span>•</span>
+                            Weapon
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROJECT 04 -->
+
+                <div
+                    class="project-card"
+                    onclick="openProject('project3d_4')"
+                >
+
+                    <div class="project-image-wrap">
+
+                        <img
+                            src="4.png"
+                            alt="Tissot 1853"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+
+                        <span class="project-number">
+                            04
+                        </span>
+
+                    </div>
+
+
+                    <div class="card-text">
+
+                        <strong>
+                            Tissot 1853
+                        </strong>
+
+
+                        <small>
+                            Product
+                            <span>•</span>
+                            Hard Surface
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROJECT 05 -->
+
+                <div
+                    class="project-card"
+                    onclick="openProject('project3d_5')"
+                >
+
+                    <div class="project-image-wrap">
+
+                        <img
+                            src="5.png"
+                            alt="Spider-Man Project Q"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+
+                        <span class="project-number">
+                            05
+                        </span>
+
+                    </div>
+
+
+                    <div class="card-text">
+
+                        <strong>
+                            Spider-Man: Project Q
+                        </strong>
+
+
+                        <small>
+                            Game Asset
+                            <span>•</span>
+                            Character
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROJECT 06 -->
+
+                <div
+                    class="project-card"
+                    onclick="openProject('project3d_6')"
+                >
+
+                    <div class="project-image-wrap">
+
+                        <img
+                            src="6.png"
+                            alt="The Final Meditation"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+
+                        <span class="project-number">
+                            06
+                        </span>
+
+                    </div>
+
+
+                    <div class="card-text">
+
+                        <strong>
+                            The Final Meditation
+                        </strong>
+
+
+                        <small>
+                            Character
+                            <span>•</span>
+                            Environment
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROJECT 07 -->
+
+                <div
+                    class="project-card"
+                    onclick="openProject('project3d_7')"
+                >
+
+                    <div class="project-image-wrap">
+
+                        <img
+                            src="7.png"
+                            alt="Warm Sunlight Kitchen"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+
+                        <span class="project-number">
+                            07
+                        </span>
+
+                    </div>
+
+
+                    <div class="card-text">
+
+                        <strong>
+                            Warm Sunlight Kitchen
+                        </strong>
+
+
+                        <small>
+                            Architectural
+                            <span>•</span>
+                            Visualization
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROJECT DETAIL
+    ====================================================== -->
+
+    <section
+        class="window fullscreen-window"
+        id="projectDetailWindow"
+    >
+
+        <div class="window-header detail-header">
+
+            <h3 id="detailHeaderTitle">
+                Project
+            </h3>
+
+
+            <div class="header-actions">
+
+                <button
+                    class="back-btn"
+                    onclick="backToPortfolio()"
+                >
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    <span>
+                        Back
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="close-btn"
+                    onclick="closeWindow('projectDetailWindow')"
+                >
+                    ✕
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="window-body detail-body">
+
+            <div class="project-detail">
+
+
+                <!-- LEFT = SCROLL -->
+
+                <div class="project-media">
+
+
+                    <div
+                        class="project-video"
+                        id="projectVideoWrapper"
+                    >
+
+                        <iframe
+                            id="projectDetailVideo"
+                            src=""
+                            title="Project Video"
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                        ></iframe>
+
+                    </div>
+
+
+                    <div class="project-hero-image">
+
+                        <img
+                            id="projectDetailImage"
+                            src=""
+                            alt="Project"
+                            decoding="async"
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- RIGHT = FIXED -->
+
+                <aside class="project-info">
+
+                    <span
+                        class="detail-number"
+                        id="detailNumber"
+                    >
+                        PROJECT 01
+                    </span>
+
+
+                    <h1 id="projectDetailTitle">
+                        Project
+                    </h1>
+
+
+                    <p id="projectDetailDescription">
+                        Description
+                    </p>
+
+
+                    <h3>
+                        Software
+                    </h3>
+
+
+                    <ul id="projectDetailSoftware"></ul>
+
+                </aside>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DOCK
+    ====================================================== -->
+
+    <div class="dock">
+
+        <div class="dock-left">
+
+            <div class="logo">
+
+                <img
+                    src="Logo.png"
+                    alt="Khac Huy Logo"
+                    decoding="async"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="dock-center">
+
+            <button
+                onclick="openWindow('resumeWindow')"
+            >
+
+                <i class="fa-solid fa-circle-user"></i>
+
+                <span>
+                    Resume
+                </span>
+
+            </button>
+
+
+            <button
+                onclick="openWindow('portfolioWindow')"
+            >
+
+                <i class="fa-solid fa-folder"></i>
+
+                <span>
+                    Portfolio
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <div class="dock-right">
+
+            <a
+                class="dock-cv"
+                href="cv.pdf"
+                target="_blank"
+                rel="noopener"
+            >
+
+                <i class="fa-solid fa-file-arrow-down"></i>
+
+                <span>
+                    CV
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="blur-layer"></div>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
