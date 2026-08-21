@@ -49,44 +49,308 @@ function closeAllWindows(){
  restoreDock();
 }
 
-function openProject(id){
- const project=projects[id];
- if(!project)return;
+/* =====================================================
+   PROJECT LOADING
+===================================================== */
 
- const image=$("#projectDetailImage");
- image.src=project.image;
- image.alt=project.title;
+const projectLoading = document.getElementById("project-loading");
+const projectLoadingBar = document.getElementById("project-loading-bar");
+const projectLoadingPercent = document.getElementById("project-loading-percent");
 
- const header=$("#detailHeaderTitle");
- header.textContent=project.title;
- header.title=project.title;
 
- const number=id.split("_").pop().padStart(2,"0");
- $("#detailNumber").textContent=`PROJECT ${number}`;
- $("#projectDetailTitle").textContent=project.title;
- $("#projectDetailDescription").textContent=project.description;
+function showProjectLoading(){
 
- const softwareList=$("#projectDetailSoftware");
- softwareList.innerHTML=project.software.map(item=>`<li>${item}</li>`).join("");
+    if(!projectLoading) return;
 
- const videoWrapper=$("#projectVideoWrapper");
- const video=$("#projectDetailVideo");
+    projectLoadingBar.style.width = "0%";
+    projectLoadingPercent.textContent = "0%";
 
- if(project.video&&project.video.startsWith("http")){
-  video.src=project.video;
-  videoWrapper.style.display="block";
- }else{
-  video.src="";
-  videoWrapper.style.display="none";
- }
+    projectLoading.classList.add("active");
+}
 
- openWindow("projectDetailWindow");
 
- const media=$(".project-media");
- const info=$(".project-info");
+function hideProjectLoading(){
 
- if(media)media.scrollTop=0;
- if(info)info.scrollTop=0;
+    if(!projectLoading) return;
+
+    projectLoadingBar.style.width = "100%";
+    projectLoadingPercent.textContent = "100%";
+
+    setTimeout(()=>{
+
+        projectLoading.classList.remove("active");
+
+    },250);
+}
+
+
+function loadProjectImage(src){
+
+    return new Promise(resolve=>{
+
+        const img = new Image();
+
+        /*
+            Giúp browser giải mã ảnh
+            trước khi coi là hoàn tất.
+        */
+
+        img.decoding = "async";
+
+        /*
+            Ảnh đã có trong cache:
+            browser sẽ trả về rất nhanh.
+        */
+
+        img.onload = async ()=>{
+
+            /*
+                Đảm bảo browser decode ảnh.
+            */
+
+            try{
+
+                if(img.decode){
+                    await img.decode();
+                }
+
+            }catch(error){
+
+                /*
+                    Một số browser có thể
+                    không decode được nhưng
+                    ảnh vẫn dùng được.
+                */
+
+            }
+
+            resolve(true);
+
+        };
+
+
+        img.onerror = ()=>{
+
+            console.warn(
+                "Không thể load project image:",
+                src
+            );
+
+            /*
+                Không để loading bị treo
+                vĩnh viễn nếu ảnh lỗi.
+            */
+
+            resolve(false);
+
+        };
+
+
+        /*
+            Bắt đầu tải ảnh.
+        */
+
+        img.src = src;
+
+    });
+
+}
+
+
+/* =====================================================
+   OPEN PROJECT
+===================================================== */
+
+async function openProject(id){
+
+    const project = projects[id];
+
+    if(!project) return;
+
+
+    /*
+        -----------------------------------------------
+        1. HIỆN LOADING
+        -----------------------------------------------
+    */
+
+    showProjectLoading();
+
+
+    /*
+        -----------------------------------------------
+        2. LẤY ELEMENT ẢNH
+        -----------------------------------------------
+    */
+
+    const image = $("#projectDetailImage");
+
+    if(!image){
+
+        hideProjectLoading();
+
+        return;
+
+    }
+
+
+    /*
+        -----------------------------------------------
+        3. TẢI ẢNH TRƯỚC
+        -----------------------------------------------
+    */
+
+    const loaded = await loadProjectImage(
+        project.image
+    );
+
+
+    /*
+        -----------------------------------------------
+        4. GÁN ẢNH SAU KHI ĐÃ LOAD
+        -----------------------------------------------
+    */
+
+    if(loaded){
+
+        image.src = project.image;
+
+        image.alt = project.title;
+
+        /*
+            Cho browser thêm 1 frame
+            để render ảnh hoàn chỉnh.
+        */
+
+        await new Promise(resolve =>
+            requestAnimationFrame(resolve)
+        );
+
+    }
+
+
+    /*
+        -----------------------------------------------
+        5. CẬP NHẬT THÔNG TIN PROJECT
+        -----------------------------------------------
+    */
+
+    const header = $("#detailHeaderTitle");
+
+    header.textContent = project.title;
+
+    header.title = project.title;
+
+
+    const number =
+        id
+            .split("_")
+            .pop()
+            .padStart(2,"0");
+
+
+    $("#detailNumber").textContent =
+        `PROJECT ${number}`;
+
+
+    $("#projectDetailTitle").textContent =
+        project.title;
+
+
+    $("#projectDetailDescription").textContent =
+        project.description;
+
+
+    /*
+        -----------------------------------------------
+        6. SOFTWARE
+        -----------------------------------------------
+    */
+
+    const softwareList =
+        $("#projectDetailSoftware");
+
+
+    softwareList.innerHTML =
+        project.software
+            .map(item => `<li>${item}</li>`)
+            .join("");
+
+
+    /*
+        -----------------------------------------------
+        7. VIDEO
+        -----------------------------------------------
+    */
+
+    const videoWrapper =
+        $("#projectVideoWrapper");
+
+    const video =
+        $("#projectDetailVideo");
+
+
+    if(
+        project.video &&
+        project.video.startsWith("http")
+    ){
+
+        video.src = project.video;
+
+        videoWrapper.style.display =
+            "block";
+
+    }else{
+
+        video.src = "";
+
+        videoWrapper.style.display =
+            "none";
+
+    }
+
+
+    /*
+        -----------------------------------------------
+        8. MỞ PROJECT
+        -----------------------------------------------
+    */
+
+    openWindow("projectDetailWindow");
+
+
+    /*
+        -----------------------------------------------
+        9. RESET SCROLL
+        -----------------------------------------------
+    */
+
+    const media =
+        $(".project-media");
+
+    const info =
+        $(".project-info");
+
+
+    if(media){
+        media.scrollTop = 0;
+    }
+
+
+    if(info){
+        info.scrollTop = 0;
+    }
+
+
+    /*
+        -----------------------------------------------
+        10. ẢNH ĐÃ SẴN SÀNG
+        → TẮT LOADING
+        -----------------------------------------------
+    */
+
+    hideProjectLoading();
+
 }
 
 function backToPortfolio(){
