@@ -10,6 +10,28 @@
     <!-- Đã sửa đường dẫn style.css ngang hàng -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- PRELOAD IMAGES: tải ảnh ngay khi trang bắt đầu mở -->
+    <link rel="preload" as="image" href="avatar.png" fetchpriority="high">
+    <link rel="preload" as="image" href="Logo.png" fetchpriority="high">
+    <link rel="preload" as="image" href="ed.png">
+    <link rel="preload" as="image" href="ts.png">
+    <link rel="preload" as="image" href="s.png">
+    <link rel="preload" as="image" href="1.png">
+    <link rel="preload" as="image" href="2.png">
+    <link rel="preload" as="image" href="3.png">
+    <link rel="preload" as="image" href="4.png">
+    <link rel="preload" as="image" href="5.png">
+    <link rel="preload" as="image" href="6.png">
+    <link rel="preload" as="image" href="7.png">
+    <link rel="preload" as="image" href="11.png">
+    <link rel="preload" as="image" href="22.png">
+    <link rel="preload" as="image" href="33.png">
+    <link rel="preload" as="image" href="44.png">
+    <link rel="preload" as="image" href="55.png">
+    <link rel="preload" as="image" href="66.png">
+    <link rel="preload" as="image" href="77.png">
+
+
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet"
@@ -49,9 +71,9 @@
             <div class="avatar-wrapper">
 
                 <img
-                    src="avatar.png"
+                    src="avatar.png" fetchpriority="high"
                     alt="Avatar"
-                    decoding="async"
+                    decoding="sync"
                 >
 
             </div>
@@ -276,8 +298,7 @@
                     <img
                         src="ed.png"
                         alt="Education"
-                        loading="lazy"
-                        decoding="async"
+                        decoding="sync"
                     >
 
                 </div>
@@ -291,8 +312,7 @@
                     <img
                         src="ts.png"
                         alt="The Service"
-                        loading="lazy"
-                        decoding="async"
+                        decoding="sync"
                     >
 
                 </div>
@@ -306,8 +326,7 @@
                     <img
                         src="s.png"
                         alt="Skills"
-                        loading="lazy"
-                        decoding="async"
+                        decoding="sync"
                     >
 
                 </div>
@@ -402,10 +421,9 @@
                     <div class="project-image-wrap">
 
                         <img
-                            src="1.png"
+                            src="1.png" fetchpriority="high"
                             alt="God Slayer"
-                            loading="lazy"
-                            decoding="async"
+                            decoding="sync"
                         >
 
 
@@ -445,10 +463,9 @@
                     <div class="project-image-wrap">
 
                         <img
-                            src="2.png"
+                            src="2.png" fetchpriority="high"
                             alt="Kane Oni"
-                            loading="lazy"
-                            decoding="async"
+                            decoding="sync"
                         >
 
 
@@ -488,10 +505,9 @@
                     <div class="project-image-wrap">
 
                         <img
-                            src="3.png"
+                            src="3.png" fetchpriority="high"
                             alt="Cyberpunk Plasma Rifle"
-                            loading="lazy"
-                            decoding="async"
+                            decoding="sync"
                         >
 
 
@@ -531,10 +547,9 @@
                     <div class="project-image-wrap">
 
                         <img
-                            src="4.png"
+                            src="4.png" fetchpriority="high"
                             alt="Tissot 1853"
-                            loading="lazy"
-                            decoding="async"
+                            decoding="sync"
                         >
 
 
@@ -574,10 +589,9 @@
                     <div class="project-image-wrap">
 
                         <img
-                            src="5.png"
+                            src="5.png" fetchpriority="high"
                             alt="Spider-Man Project Q"
-                            loading="lazy"
-                            decoding="async"
+                            decoding="sync"
                         >
 
 
@@ -617,10 +631,9 @@
                     <div class="project-image-wrap">
 
                         <img
-                            src="6.png"
+                            src="6.png" fetchpriority="high"
                             alt="The Final Meditation"
-                            loading="lazy"
-                            decoding="async"
+                            decoding="sync"
                         >
 
 
@@ -660,10 +673,9 @@
                     <div class="project-image-wrap">
 
                         <img
-                            src="7.png"
+                            src="7.png" fetchpriority="high"
                             alt="Warm Sunlight Kitchen"
-                            loading="lazy"
-                            decoding="async"
+                            decoding="sync"
                         >
 
 
@@ -763,7 +775,6 @@
                             id="projectDetailVideo"
                             src=""
                             title="Project Video"
-                            loading="lazy"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen
                         ></iframe>
@@ -777,7 +788,7 @@
                             id="projectDetailImage"
                             src=""
                             alt="Project"
-                            decoding="async"
+                            decoding="sync"
                         >
 
                     </div>
@@ -838,7 +849,7 @@
                 <img
                     src="Logo.png"
                     alt="Khac Huy Logo"
-                    decoding="async"
+                    decoding="sync"
                 >
 
             </div>

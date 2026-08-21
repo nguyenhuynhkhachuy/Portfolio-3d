@@ -593,7 +593,6 @@ body{
 
     contain:paint;
 
-    will-change:auto;
 }
 
 .project-card:hover{
@@ -610,7 +609,6 @@ body{
         0 20px 45px rgba(0,242,254,.15),
         0 15px 40px rgba(0,0,0,.4);
 
-    will-change:transform;
 }
 
 
@@ -637,7 +635,6 @@ body{
 
     transition:.6s;
 
-    content-visibility:auto;
 }
 
 .project-card:hover img{
@@ -1463,7 +1460,6 @@ body{
 .dock-center button,
 .dock-cv,
 .logo{
-    will-change:auto;
 }
 
 .project-card:hover,
@@ -1471,7 +1467,6 @@ body{
 .dock-center button:hover,
 .dock-cv:hover,
 .logo:hover{
-    will-change:transform;
 }
 
 .window-body,
